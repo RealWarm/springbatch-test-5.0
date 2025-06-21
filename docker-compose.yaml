@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: house-mysql
+    ports:
+      - "33308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=house
+      - MYSQL_PASSWORD=house
+      - MYSQL_DATABASE=house
+    volumes:
+      - ./data_batch/mysql/:/var/lib/mysql
+    command:
+      - "mysqld"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
