@@ -7,8 +7,10 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.InitializingBean;
 
+
+// , InitializingBean
 @Slf4j
-public class GreetingTask implements Tasklet, InitializingBean {
+public class GreetingTask implements Tasklet{
     @Override
     public RepeatStatus execute(StepContribution contribution,
                                 ChunkContext chunkContext) throws Exception {
@@ -18,8 +20,8 @@ public class GreetingTask implements Tasklet, InitializingBean {
         return RepeatStatus.FINISHED;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        log.info("----------------- After Properites Sets() --------------");
-    }
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        log.info("----------------- After Properites Sets() --------------");
+//    }
 }

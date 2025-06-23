@@ -4,7 +4,7 @@ spring:
   batch:
     job:
 #      name: ${job.name:NONE}
-      name: fileToDbJob
+      name: JDBC_BATCH_WRITER_CHUNK_JOB
 
 
 ---
@@ -28,9 +28,9 @@ spring:
 
   batch:
     jdbc:
-      initialize-schema: never
+      initialize-schema: always
     job:
-      enabled: false
+      enabled: true
 
 input:
   file: "input_data.csv"
