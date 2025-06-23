@@ -12,7 +12,7 @@ public class GreetingTask implements Tasklet, InitializingBean {
     @Override
     public RepeatStatus execute(StepContribution contribution,
                                 ChunkContext chunkContext) throws Exception {
-        log.info("------------------ Task Execute -----------------");
+        log.info("00------------------ Task Execute -----------------");
         log.info("GreetingTask: {}, {}", contribution, chunkContext);
 
         return RepeatStatus.FINISHED;
@@ -20,6 +20,6 @@ public class GreetingTask implements Tasklet, InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        log.info("----------------- After Properites Sets() --------------");
+        log.info("00----------------- After Properites Sets() --------------");
     }
 }
