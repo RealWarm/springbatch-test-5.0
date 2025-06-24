@@ -4,7 +4,7 @@ spring:
   batch:
     job:
 #      name: ${job.name:NONE}
-      name: JDBC_BATCH_WRITER_CHUNK_JOB
+      name: flatFileJob
 
 
 ---
@@ -20,6 +20,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
         format_sql: true
